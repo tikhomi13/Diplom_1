@@ -13,3 +13,11 @@ class Bun:
 
     def get_price(self) -> float:
         return self.price
+
+
+bun_1 = Bun(name='Булка', price=11)
+print(bun_1.get_name())
+print(bun_1.get_price())
+
+
+
