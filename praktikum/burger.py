@@ -51,30 +51,14 @@ class Burger:
 
 bun_1 = Bun(name='Булка', price=11)
 bun_1.get_name()
-
-
 burger_1 = Burger()
 print(burger_1.set_buns(bun_1))
-
 print(burger_1.bun) ###
-
 print(burger_1.bun.get_name())
-
 print(burger_1.bun.get_price()) # !!!!!!!!!!!!!!! вот так
-
 print(burger_1.ingredients)
 
-
 #burger_1.ingredients.append(bun_1)
-
 #print(burger_1.ingredients)
-
 #print(burger_1.set_buns(Bun(name='ffffff', price=2)))
-
-
 #print(burger_1.set_buns(Bun.bun_1))
-
-
-
-
-
