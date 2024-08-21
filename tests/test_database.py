@@ -1,4 +1,4 @@
-from praktikum import Database
+from praktikum.database import Database
 
 
 class TestDatabase:
@@ -13,7 +13,7 @@ class TestDatabase:
         assert test_database.buns[1].name == 'white bun'
         assert test_database.buns[1].price == 200
 
-        assert test_database.buns[2].name == 'red_bun'
+        assert test_database.buns[2].name == 'red bun'
         assert test_database.buns[2].price == 300
 
     def test_list_of_ingredients(self):

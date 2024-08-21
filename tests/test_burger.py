@@ -1,17 +1,25 @@
-import pytest
 from unittest.mock import Mock
-from burger import Burger
-from bun import Bun
 
-from ingredient import Ingredient
-from typing import List
-from unittest.mock import patch
-from praktikum import Database
+
+from praktikum.burger import Burger
+from praktikum.bun import Bun
+
+
+
+from praktikum.ingredient import Ingredient
+from praktikum.database import Database
 
 my_ingredients = [["SAUCE", 'test_sauce', 5]]
 
 
 class TestBurger:
+
+
+
+  #  def __init__(self):
+  #      self.bun = None
+  #      self.ingredients: List[Ingredient] = []
+
 
     def test_set_buns_bun_set(self):
 
@@ -50,16 +58,83 @@ class TestBurger:
 
     def test_remove_ingredient(self):
 
-        pass
+        burger_1 = Burger()
 
+        ingredient_1 = Ingredient(ingredient_type='SAUCE', name='Ingredient_1', price=44)
+        ingredient_2 = Ingredient(ingredient_type='SAUCE', name='Ingredient_2', price=43)
+
+        burger_1.add_ingredient(ingredient_1)
+        burger_1.add_ingredient(ingredient_2)
+
+        assert len(burger_1.ingredients) == 2
+        print(len(burger_1.ingredients))
+
+        burger_1.remove_ingredient(0)
+        assert len(burger_1.ingredients) == 1
 
     def test_move_ingredient(self):
 
-        pass
+        burger_1 = Burger()
+
+        ingredient_1 = Ingredient(ingredient_type='SAUCE', name='Ingredient_1', price=44)
+        ingredient_2 = Ingredient(ingredient_type='SAUCE', name='Ingredient_2', price=43)
+
+        burger_1.add_ingredient(ingredient_1)
+        burger_1.add_ingredient(ingredient_2)
+
+        burger_1.move_ingredient(1, 0)
+
+        assert burger_1.ingredients[0] == ingredient_2
+        print(burger_1.ingredients)
+        print(ingredient_2)
+
+  #  def test_get_price(self):
+
+
+
+       # bun_1 = Bun(name='Булка', price=11)
+       # price = bun_1.get_price()
+
+       # print(price)
+
+     ##   ingredient_1 = Ingredient(ingredient_type='SAUCE', name='Ingredient_1', price=44)
+       # ingredient_2 = Ingredient(ingredient_type='SAUCE', name='Ingredient_2', price=43)
+
+      #  burger_1.add_ingredient(ingredient_1) ## ??
+      #  burger_1.add_ingredient(ingredient_2) ## ??
+
+     #   burger_1.bun.get_price()
+
+     #   burger_1 = Burger()
+     #   burger_1.get_price()
+
+
+      #  assert bun_1.get_name() == 'Булка'
+
+
+
+       # burger_1.get_price()
 
     def test_get_price(self):
 
-        pass
+        bun_1 = Bun(name='Булка', price=11)
+        bun_1.get_name()
+        bun_1.get_price()
+
+        burger_1 = Burger()
+      #  print(burger_1.bun.get_name())
+      #  print(burger_1.bun.get_price())
+
+
+
+
+
+     #   burger_1 = Burger()
+     #   burger_1.bun.get_price()
+
+      #  burger_1.get_price()
+
+
 
     def test_get_receipt(self):
 
@@ -129,10 +204,10 @@ class TestBurger:
         print(burger.ingredients) # - Получаем список.
 
     #@patch('data.MockBun.mock_bun', return_value=MockBun)
-    def test_set_buns_with_mock(self, mock_bun):
+    #def test_set_buns_with_mock(self, mock_bun):
 
 
 
 
-        pass
+       # pass
 

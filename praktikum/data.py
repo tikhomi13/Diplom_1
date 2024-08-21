@@ -1,8 +1,8 @@
 from unittest.mock import Mock
 from unittest.mock import patch
-from burger import Burger
-from bun import Bun
-from ingredient import Ingredient
+from praktikum.burger import Burger
+from praktikum.bun import Bun
+from praktikum.ingredient import Ingredient
 
 
 class MockBun:
