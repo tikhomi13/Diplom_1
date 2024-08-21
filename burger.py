@@ -1,7 +1,10 @@
 from typing import List
 
+import bun
 # from praktikum.bun import Bun
 # from praktikum.ingredient import Ingredient
+#from bun import bun_1
+
 
 from bun import Bun
 from ingredient import Ingredient
@@ -49,3 +52,34 @@ class Burger:
         receipt.append(f'Price: {self.get_price()}')
 
         return '\n'.join(receipt)
+
+
+bun_1 = Bun(name='Булка', price=11)
+bun_1.get_name()
+
+
+burger_1 = Burger()
+print(burger_1.set_buns(bun_1))
+
+print(burger_1.bun) ###
+
+print(burger_1.bun.get_name())
+
+print(burger_1.bun.get_price()) # !!!!!!!!!!!!!!! вот так
+
+print(burger_1.ingredients)
+
+
+#burger_1.ingredients.append(bun_1)
+
+#print(burger_1.ingredients)
+
+#print(burger_1.set_buns(Bun(name='ffffff', price=2)))
+
+
+#print(burger_1.set_buns(Bun.bun_1))
+
+
+
+
+
