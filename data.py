@@ -5,6 +5,16 @@ from praktikum.bun import Bun
 from praktikum.ingredient import Ingredient
 
 
+class StellarBurgersTestData:
+
+    bun_1 = Bun(name='Булка', price=11)
+    ingredient_1 = Ingredient(ingredient_type='SAUCE', name='Ingredient_1', price=44)
+    ingredient_2 = Ingredient(ingredient_type='SAUCE', name='Ingredient_2', price=43)
+    list_of_ingredients = [["SAUCE", 'test_sauce', 5]]
+
+
+
+
 class MockBun:
 
     bun_mock = Mock(spec=Bun)

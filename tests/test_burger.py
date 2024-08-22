@@ -5,36 +5,29 @@ from praktikum.burger import Burger
 from praktikum.bun import Bun
 from praktikum.ingredient import Ingredient
 from praktikum.database import Database
+from data import StellarBurgersTestData
 
-my_ingredients = [["SAUCE", 'test_sauce', 5]]
+
 
 
 class TestBurger:
 
     def test_set_buns_bun_set(self):
 
-        bun_1 = Bun(name='Булка', price=11)    # убрать в переменные
-        bun_1.get_name()
+           # убрать в переменные
+        StellarBurgersTestData.bun_1.get_name()
 
         burger_1 = Burger()
-        burger_1.set_buns(bun_1)   # None так как set_buns устанавливает значение, а не возвращает
+        burger_1.set_buns(StellarBurgersTestData.bun_1)
 
-        burger_1.bun.get_name()
-        burger_1.bun.get_price()
-
-        print(burger_1.bun.get_name())    # тут вместо bun может быть мок
-        print(burger_1.bun.get_price())
-
-        assert burger_1.bun.get_name() == 'Булка'
-        assert burger_1.bun.get_price()
+        assert burger_1.bun.get_name() == 'Булка' and burger_1.bun.get_price() == 11
 
     def test_add_ingredient(self):   # рабочие вызовы методов . Пробую сделать мок
 
-        bun_1 = Bun(name='Булка', price=11)
-        bun_1.get_name()
+        StellarBurgersTestData.bun_1.get_name()
 
         burger_1 = Burger()
-        burger_1.set_buns(bun_1)
+        burger_1.set_buns(StellarBurgersTestData.bun_1)
 
         ingredient = Ingredient(ingredient_type='SAUCE', name='Ingredient_1', price=44)
         burger_1.add_ingredient(ingredient)
@@ -44,15 +37,9 @@ class TestBurger:
     def test_remove_ingredient(self):
 
         burger_1 = Burger()
-
-        ingredient_1 = Ingredient(ingredient_type='SAUCE', name='Ingredient_1', price=44)
-        ingredient_2 = Ingredient(ingredient_type='SAUCE', name='Ingredient_2', price=43)
-
-        burger_1.add_ingredient(ingredient_1)
-        burger_1.add_ingredient(ingredient_2)
-
+        burger_1.add_ingredient(StellarBurgersTestData.ingredient_1)
+        burger_1.add_ingredient(StellarBurgersTestData.ingredient_2)
         assert len(burger_1.ingredients) == 2
-        print(len(burger_1.ingredients))
 
         burger_1.remove_ingredient(0)
         assert len(burger_1.ingredients) == 1
@@ -60,43 +47,27 @@ class TestBurger:
     def test_move_ingredient(self):
 
         burger_1 = Burger()
-
-        ingredient_1 = Ingredient(ingredient_type='SAUCE', name='Ingredient_1', price=44)
-        ingredient_2 = Ingredient(ingredient_type='SAUCE', name='Ingredient_2', price=43)
-
-        burger_1.add_ingredient(ingredient_1)
-        burger_1.add_ingredient(ingredient_2)
-
+        burger_1.add_ingredient(StellarBurgersTestData.ingredient_1)
+        burger_1.add_ingredient(StellarBurgersTestData.ingredient_2)
         burger_1.move_ingredient(1, 0)
-
-        assert burger_1.ingredients[0] == ingredient_2
-        print(burger_1.ingredients)
-        print(ingredient_2)
-
+        assert burger_1.ingredients[0] == StellarBurgersTestData.ingredient_2
 
     def test_get_price(self):
 
-        bun_1 = Bun(name='Булка', price=11)
-        bun_1.get_name()
-        bun_1.get_price()
-
+        StellarBurgersTestData.bun_1.get_name()
+        StellarBurgersTestData.bun_1.get_price()
         burger_1 = Burger()
-        burger_1.set_buns(bun_1)    # этого не хватало
-
-        print(burger_1.bun.get_name())
-        print(burger_1.bun.get_price())
+        burger_1.set_buns(StellarBurgersTestData.bun_1)    # этого не хватало
 
         assert burger_1.bun.get_price() == 11
 
     def test_get_receipt(self):
 
-        bun_1 = Bun(name='Булка', price=11)
         burger_1 = Burger()
-        burger_1.set_buns(bun_1)
-
+        burger_1.set_buns(StellarBurgersTestData.bun_1)
         print(burger_1.get_receipt())
 
-        assert bun_1.name in burger_1.get_receipt()
+        assert StellarBurgersTestData.bun_1.name in burger_1.get_receipt()
 
 
        # assert burger_1.get_receipt() == '(=== Булка ===)'
