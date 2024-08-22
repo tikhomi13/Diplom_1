@@ -19,7 +19,6 @@ class TestBurger:
 
         burger_1 = Burger()
         burger_1.set_buns(StellarBurgersTestData.bun_1)
-
         assert burger_1.bun.get_name() == 'Булка' and burger_1.bun.get_price() == 11
 
     def test_add_ingredient(self):   # рабочие вызовы методов . Пробую сделать мок
@@ -31,7 +30,6 @@ class TestBurger:
 
         ingredient = Ingredient(ingredient_type='SAUCE', name='Ingredient_1', price=44)
         burger_1.add_ingredient(ingredient)
-
         assert len(burger_1.ingredients) == 1
 
     def test_remove_ingredient(self):
@@ -56,26 +54,22 @@ class TestBurger:
 
         StellarBurgersTestData.bun_1.get_name()
         StellarBurgersTestData.bun_1.get_price()
+
         burger_1 = Burger()
         burger_1.set_buns(StellarBurgersTestData.bun_1)    # этого не хватало
-
         assert burger_1.bun.get_price() == 11
 
     def test_get_receipt(self):
 
         burger_1 = Burger()
         burger_1.set_buns(StellarBurgersTestData.bun_1)
-        print(burger_1.get_receipt())
+        expected_result = (
+            f'(==== Булка ====)\n'
+            f'(==== Булка ====)\n'
+            f'\nPrice: 22'
+        )
 
-        assert StellarBurgersTestData.bun_1.name in burger_1.get_receipt()
-
-
-       # assert burger_1.get_receipt() == '(=== Булка ===)'
-       # bun_1 = Bun(n)
-       # bun_1.get_name()
-       # bun_1.get_price()
-       # print(bun_1.name)
-
+        assert burger_1.get_receipt() == expected_result
 
     def test_bun_mock(self):   # РАБОЧИЙ МОК
 
