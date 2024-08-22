@@ -13,8 +13,6 @@ class StellarBurgersTestData:
     list_of_ingredients = [["SAUCE", 'test_sauce', 5]]
 
 
-
-
 class MockBun:
 
     bun_mock = Mock(spec=Bun)
@@ -31,7 +29,3 @@ class MockIngredient:
 
     mocked_burger = Burger()
     mocked_burger.ingredients = [ingredient_mock]
-
-
-
-
