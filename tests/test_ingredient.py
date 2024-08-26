@@ -1,5 +1,5 @@
-from praktikum.ingredient import Ingredient
 from data import StellarBurgersTestData
+
 
 class TestIngredient:
 
@@ -14,4 +14,3 @@ class TestIngredient:
     def test_get_type(self):
 
         assert StellarBurgersTestData.ingredient_1.get_type() == "SAUCE"
-

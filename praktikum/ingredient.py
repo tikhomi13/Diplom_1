@@ -18,15 +18,3 @@ class Ingredient:
 
     def get_type(self) -> str:
         return self.type
-
-
-ingr_1 = Ingredient(ingredient_type='SAUCE', name='Ingredient_1', price=44)
-
-ingr_1.get_name()
-
-print(ingr_1.get_name())
-
-print(ingr_1.get_price())
-
-print(ingr_1.get_type())
-
